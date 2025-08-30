@@ -7,6 +7,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'TELECOPY_FONT';
+  src: url('telecopy-font.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @keyframes flicker {
   0% { opacity: 0.1; }
   5% { opacity: 0.2; }
@@ -91,9 +98,9 @@
   z-index: 9999;
   animation: overlay-anim 6s linear;
   animation-fill-mode: forwards;
+  filter: drop-shadow(0 0 2px rgba(255, 0, 255, 0.8));
 }
 
-/* Scanlines et flicker sur tout l'écran */
 body::before {
   content: " ";
   display: block;
@@ -190,13 +197,14 @@ header .logo img{
     height: 60px;
     width: auto;
     max-width: 120px;
-    filter: drop-shadow(0 0 3px rgba(139, 0, 255, 0.8));
+    filter: drop-shadow(0 0 3px rgba(255, 0, 255, 0.8));
 }
 header nav a{
     margin-left: 30px;
     text-decoration: none;
     color: #ddd;
     font-weight: 500;
+    font-family: 'TELECOPY_FONT', monospace;
 }
 
 .carousel{
@@ -584,5 +592,4 @@ header nav a{
         float: right;
     }
 }
-
 
