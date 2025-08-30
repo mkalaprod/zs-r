@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* Police CRT Font */
 @font-face {
   font-family: 'CRT_FONT';
   src: url('crt-font.ttf') format('truetype');
@@ -8,9 +7,6 @@
   font-style: normal;
 }
 
-/* Effet CRT Rétro */
-
-/* Animation de flicker */
 @keyframes flicker {
   0% { opacity: 0.1; }
   5% { opacity: 0.2; }
@@ -35,7 +31,6 @@
   100% { opacity: 0.1; }
 }
 
-/* Animation turn-on */
 @keyframes turn-on {
   0% {
     transform: scale(1, 0.8) translate3d(0, 0, 0);
@@ -70,7 +65,6 @@
   }
 }
 
-/* Animation overlay ZS-R - Flicker simple */
 @keyframes overlay-anim {
   0% { visibility: hidden; }
   10% { visibility: visible; }
@@ -85,7 +79,6 @@
   100% { visibility: hidden; }
 }
 
-/* Overlay ZS-R */
 .overlay {
   color: #ea00ff;
   position: fixed;
@@ -115,7 +108,6 @@ body::before {
   pointer-events: none;
 }
 
-/* Flicker subtil permanent */
 body::after {
   content: " ";
   display: block;
@@ -131,7 +123,6 @@ body::after {
   animation: flicker 0.15s infinite;
 }
 
-/* Animation turn-on au chargement */
 body {
   animation: turn-on 4s linear;
   animation-fill-mode: forwards;
@@ -593,4 +584,5 @@ header nav a{
         float: right;
     }
 }
+
 
