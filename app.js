@@ -32,10 +32,15 @@ const showSlider = (type) => {
         prevButton.style.pointerEvents = 'auto';
     }, 2000)
 }
+// Caca
 seeMoreButtons.forEach((button) => {
     button.onclick = function(){
-        carousel.classList.remove('next', 'prev');
-        carousel.classList.add('showDetail');
+        if (carousel.classList.contains('showDetail')) {
+            carousel.classList.remove('showDetail');
+        } else {
+            carousel.classList.remove('next', 'prev');
+            carousel.classList.add('showDetail');
+        }
     }
 });
 backButton.onclick = function(){
