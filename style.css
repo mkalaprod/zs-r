@@ -109,7 +109,7 @@ body::before {
   left: 0;
   bottom: 0;
   right: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(8, 6, 6, 0.75) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background: linear-gradient(rgba(255, 255, 255, 0) 50%, rgba(8, 6, 6, 0.75) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
   z-index: 2;
   background-size: 100% 2px, 3px 100%;
   pointer-events: none;
@@ -591,5 +591,93 @@ header nav a{
         width: max-content;
         float: right;
     }
+}
+.about-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backdrop-filter: blur(0px);
+}
+.about-popup.show {
+    opacity: 1;
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(20px);
+}
+.about-content {
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 50px;
+    max-width: 650px;
+    text-align: center;
+    position: relative;
+    border-radius: 20px;
+    transform: scale(0.8) translateY(30px);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+.about-popup.show .about-content {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+.about-content h2 {
+    font-size: 2.8em;
+    margin-bottom: 35px;
+    font-weight: 600;
+    color: #fff;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
+}
+.about-popup.show .about-content h2 {
+    transform: translateY(0);
+    opacity: 1;
+}
+.about-content p {
+    font-size: 1.2em;
+    line-height: 1.7;
+    margin-bottom: 45px;
+    color: #ddd;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+}
+.about-popup.show .about-content p {
+    transform: translateY(0);
+    opacity: 1;
+}
+#closeAbout {
+    font-family: Poppins;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 15px 30px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 25px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+}
+.about-popup.show #closeAbout {
+    transform: translateY(0);
+    opacity: 1;
+}
+#closeAbout:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
