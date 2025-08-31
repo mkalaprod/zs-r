@@ -4,6 +4,9 @@ let carousel = document.querySelector('.carousel');
 let listHTML = document.querySelector('.carousel .list');
 let seeMoreButtons = document.querySelectorAll('.seeMore');
 let backButton = document.getElementById('back');
+let aboutButton = document.getElementById('about');
+let closeAboutButton = document.getElementById('closeAbout');
+let aboutPopup = document.getElementById('aboutPopup');
 let checkoutButtons = document.querySelectorAll('.checkout button');
 
 nextButton.onclick = function(){
@@ -47,20 +50,24 @@ backButton.onclick = function(){
     carousel.classList.remove('showDetail');
 }
 
+aboutButton.onclick = function(){
+    aboutPopup.classList.add('show');
+}
+
+closeAboutButton.onclick = function(){
+    aboutPopup.classList.remove('show');
+}
+
 checkoutButtons.forEach((btn) => {
     btn.addEventListener('click', (e) => {
         e.stopPropagation();
-        // Placeholder action: log click. Replace with real action.
         console.log('Checkout button clicked:', btn.textContent.trim());
-        // Example: window.location.href = '#';
     });
 });
 
-// Ensure LOREM 1 shows first (CSS highlights nth-child(2)) without animation
 window.addEventListener('DOMContentLoaded', () => {
     const items = document.querySelectorAll('.carousel .list .item');
     if (items.length > 1) {
-        // Move last item to the front so the second item becomes the original first (LOREM 1)
         listHTML.prepend(items[items.length - 1]);
     }
 });
